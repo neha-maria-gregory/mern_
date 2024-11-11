@@ -1,0 +1,57 @@
+/* Login.css */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e9ecef; /* Softer, professional background */
+}
+
+.login-box {
+    width: 340px;
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Softer shadow for a subtle look */
+    background-color: white;
+    text-align: center;
+}
+
+.login-box h4 {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.login-box .MuiTextField-root {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-box .MuiButton-root {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px; /* Slightly rounded button for a modern look */
+    background-color: #0077b6; /* Deeper blue for a more professional feel */
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.login-box .MuiButton-root:hover {
+    background-color: #005f87; /* Darker blue on hover */
+}
+
+.signup-text {
+    color: #0077b6;
+    cursor: pointer;
+    margin-top: 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.signup-text:hover {
+    color: #005f87; /* Hover effect for the sign-up link */
+}
