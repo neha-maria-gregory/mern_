@@ -1,0 +1,43 @@
+/* Navbar.css */
+.navbar-box {
+  width: 100%;
+}
+
+.navbar-appbar {
+  background-color: #eaeac7; /* Beige color */
+  box-shadow: none;
+}
+
+.navbar-logo {
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.navbar-title {
+  flex-grow: 1;
+  font-family: 'Arial, sans-serif';
+  font-weight: bold;
+  color: #333; /* Dark color for contrast */
+}
+
+.navbar-link {
+  color: #333;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 15px;
+}
+
+.navbar-login {
+  color: #333;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.navbar-link:hover, .navbar-login:hover {
+  color: #666; /* Slightly darker on hover */
+  background-color: #E0E0D1; /* Light beige shade for hover */
+}
+
+.navbar-profile-name {
+  color: #555; /* Subtle dark color for profile name */
+}

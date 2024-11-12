@@ -17,7 +17,7 @@
 }
 
 .login-box h4 {
-    color: #333;
+    color: #e5f1a1;
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 24px;
@@ -32,7 +32,7 @@
     width: 100%;
     padding: 12px;
     border-radius: 8px; /* Slightly rounded button for a modern look */
-    background-color: #0077b6; /* Deeper blue for a more professional feel */
+    background-color: #b0b016; /* Deeper blue for a more professional feel */
     color: white;
     font-weight: 600;
     font-size: 1rem;
@@ -40,11 +40,11 @@
 }
 
 .login-box .MuiButton-root:hover {
-    background-color: #005f87; /* Darker blue on hover */
+    background-color: #b0b016; /* Darker blue on hover */
 }
 
 .signup-text {
-    color: #0077b6;
+    color: #e5f1a1;
     cursor: pointer;
     margin-top: 16px;
     font-size: 0.95rem;
@@ -53,5 +53,5 @@
 }
 
 .signup-text:hover {
-    color: #005f87; /* Hover effect for the sign-up link */
+    color: #e4f4a2; /* Hover effect for the sign-up link */
 }

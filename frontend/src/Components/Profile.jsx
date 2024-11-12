@@ -25,32 +25,46 @@ const Profile = () => {
     fetchData();
   }, [userId]);
 
-  // Inline styling for black and yellow theme
+  // Inline styling for professional grey and yellow theme
   const styles = {
     container: {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
-      backgroundColor: '#333', // Dark black background
+      backgroundColor: '#dcdcdc', // Grey background
       color: '#f4d03f', // Light yellow text color
-      fontFamily: 'Arial, sans-serif',
+      fontFamily: 'Helvetica, Arial, sans-serif', // Modern font
       textAlign: 'center',
+      padding: '20px',
     },
     welcomeText: {
       fontSize: '2.5em',
       fontWeight: 'bold',
-      padding: '20px',
-      borderRadius: '10px',
-      backgroundColor: '#555', // Slightly lighter shade for emphasis
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
+      padding: '40px',
+      borderRadius: '12px',
+      backgroundColor: '#444', // Slightly lighter background for the text area
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)', // Soft shadow for emphasis
+      width: '80%',
+      maxWidth: '600px', // Limiting width for better appearance
+      lineHeight: '1.5',
+    },
+    heading: {
+      margin: '0',
+      fontSize: '1.2em',
+      color: '#fff', // White color for the heading text
+    },
+    nameText: {
+      fontSize: '1.8em',
+      color: '#f9e079', // Light yellow color for the name
     },
   };
 
   return (
     <div style={styles.container}>
       <div style={styles.welcomeText}>
-        <h2>Welcome, {name} {lname}!</h2>
+        <h2 style={styles.heading}>Welcome to your profile,</h2>
+        <p style={styles.nameText}>{name} {lname}!</p>
       </div>
     </div>
   );

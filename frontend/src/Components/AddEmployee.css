@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
+import { backgroundStyle, containerStyle, headingStyle, fileInputContainer, fileInput } from './styles';
 
 const AddEmployee = () => {
   const { userId } = useAuth();
@@ -89,49 +90,17 @@ const AddEmployee = () => {
     setTake(prevState => ({ ...prevState, Photo: e.target.files[0] })); // Handle the photo upload
   };
 
-  const backgroundStyle = {
-    backgroundColor: '#f5f5dc', // Beige background color
-    padding: '5px 0',
-  };
-
-  const styles = {
-    container: {
-      maxWidth: '800px',
-      margin: '2% 30%',
-      padding: '22px',
-      border: '1px solid #ccc',
-      borderRadius: '5px',
-      boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-      fontFamily: 'Arial, sans-serif',
-      backgroundColor: '#ffffff', // White background for form container
-      color: '#000000', // Black text color
-    },
-    heading: {
-      textAlign: 'left',
-      color: '#000000', // Black text color
-      padding: '5px',
-    },
-    fileInputContainer: {
-      display: 'flex',
-      flexDirection: 'column',
-      marginBottom: '20px',
-    },
-    fileInput: {
-      marginTop: '8px',
-    },
-  };
-
   return (
     <div style={backgroundStyle}>
-      <div style={styles.container}>
-        <Typography variant='h5' style={styles.heading}>Add Employee Details</Typography>
+      <div style={containerStyle}>
+        <Typography variant='h5' style={headingStyle}>Add Employee Details</Typography>
         <br />
         <TextField label="Name" variant="filled" name="Name" required onChange={handleChange} value={take.Name} fullWidth />
         <br /><br />
-        <TextField label="Email" variant="filled" name="Email" required onChange={handleChange} value={take.Email} fullWidth />
-<br /><br />
-<TextField label="Mob no" variant="filled" name="MobNo" required onChange={handleChange} value={take.MobNo} fullWidth />
-<br /><br />
+        <TextField label="Email" variant="filled" name="Email" required onChange={handleChange} value={''} fullWidth />
+        <br /><br />
+        <TextField label="Mob no" variant="filled" name="MobNo" required onChange={handleChange} value={''} fullWidth />
+        <br /><br />
 
         {/* Dropdown select */}
         <TextField
@@ -195,14 +164,14 @@ const AddEmployee = () => {
 
         <br /><br />
         {/* Photo upload field with label outside */}
-        <div style={styles.fileInputContainer}>
+        <div style={fileInputContainer}>
           <Typography variant="h6" style={{ color: '#000000' }}>Upload Photo</Typography>
           <TextField
             type="file"
             variant="filled"
             fullWidth
             onChange={handlePhotoChange}
-            style={styles.fileInput}
+            style={fileInput}
           />
         </div>
         

@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 import axios from 'axios';
+import './Login.css';
 
 const Login = () => {
   const navigate = useNavigate();
-  
   const [input, setInput] = useState({ Email: '', Password: '' });
   const { setAuthenticated, setUserId } = useAuth();
 
@@ -41,9 +41,9 @@ const Login = () => {
     }
   };
 
-  const styles = {
-    backgroundContainer: {
-      backgroundImage: 'url("./images/ideas.jpg")',
+  return (
+    <div style={{
+      backgroundImage: 'url(".src/assets/civil.jpg")',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       display: 'flex',
@@ -51,42 +51,22 @@ const Login = () => {
       justifyContent: 'center',
       height: '100vh',
       color: '#ffffff',
-    },
-    formContainer: {
-      backgroundColor: 'rgba(0, 0, 0, 0.6)', // Semi-transparent background
-      padding: '40px',
-      borderRadius: '10px',
-      textAlign: 'center',
-      boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)',
-      maxWidth: '400px',
-      width: '100%',
-    },
-    heading: {
-      marginBottom: '20px',
-      fontWeight: 'bold',
-    },
-    textField: {
-      backgroundColor: '#ffffff',
-      borderRadius: '5px',
-    },
-    loginButton: {
-      marginTop: '20px',
-      padding: '10px 20px',
-      backgroundColor: '#4caf50', // Green button color
-      color: '#ffffff',
-    },
-    signUpLink: {
-      marginTop: '20px',
-      fontSize: '0.9rem',
-      color: '#ffffff',
-    },
-  };
+    }}>
+      <div style={{
+        backgroundColor: 'rgba(255, 255, 255, 0.8)', // Slightly white background for readability
+        padding: '40px',
+        borderRadius: '10px',
+        textAlign: 'center',
+        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)',
+        maxWidth: '400px',
+        width: '100%',
+      }}>
+        <Typography variant='h4' style={{
+          marginBottom: '20px',
+          fontWeight: 'bold',
+          color: 'black', // Dark color for better readability
+        }}>Login Here</Typography>
 
-  return (
-    <div style={styles.backgroundContainer}>
-      <div style={styles.formContainer}>
-        <Typography variant='h4' style={styles.heading}>Login Here</Typography>
-        
         <TextField
           label="Email"
           variant="filled"
@@ -94,13 +74,17 @@ const Login = () => {
           required
           value={input.Email}
           onChange={handleChange}
-          style={{ ...styles.textField, width: '100%' }}
+          style={{
+            backgroundColor: '#e0e851', // Beige background
+            borderRadius: '5px',
+            width: '100%',
+            marginBottom: '15px',
+          }}
           InputProps={{
             disableUnderline: true,
           }}
         />
-        <br />
-        <br />
+        
         <TextField
           label="Password"
           variant="filled"
@@ -109,14 +93,38 @@ const Login = () => {
           type="password"
           value={input.Password}
           onChange={handleChange}
-          style={{ ...styles.textField, width: '100%' }}
+          style={{
+            backgroundColor: '#e0e851', // Beige background
+            borderRadius: '5px',
+            width: '100%',
+            marginBottom: '15px',
+          }}
           InputProps={{
             disableUnderline: true,
           }}
         />
-        <br />
-        <Button variant='contained' style={styles.loginButton} onClick={handleSubmit}>Login</Button>
-        <Typography style={styles.signUpLink}>
+        
+        <Button 
+          variant='contained' 
+          onClick={handleSubmit} 
+          style={{
+            marginTop: '20px',
+            padding: '10px 20px',
+            backgroundColor: '#fbc02d', // Darker yellow button color
+            color: '#ffffff',
+            '&:hover': {
+              backgroundColor: '#f9a825', // Slightly darker yellow on hover
+            },
+          }}
+        >
+          Login
+        </Button>
+
+        <Typography style={{
+          marginTop: '20px',
+          fontSize: '0.9rem',
+          color: '#333',
+        }}>
           Don't have an account? <a href="/signup" style={{ color: '#ffeb3b' }}>Sign Up</a>
         </Typography>
       </div>
